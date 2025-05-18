@@ -1,12 +1,19 @@
+
+
 import React from 'react';
-import { CardProps } from '@/interfaces/index';
+
+export interface CardProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+}
 
 const Card: React.FC<CardProps> = ({ title, description, imageUrl }) => {
   return (
-    <div className="border rounded-lg overflow-hidden shadow-md bg-white">
+    <div className="bg-white shadow-md rounded-lg overflow-hidden">
       <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
       <div className="p-4">
-        <h3 className="text-xl font-semibold">{title}</h3>
+        <h2 className="text-lg font-semibold">{title}</h2>
         <p className="text-gray-600">{description}</p>
       </div>
     </div>
